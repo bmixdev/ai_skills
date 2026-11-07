@@ -1,0 +1,19 @@
+# These files are read by DSH as UTF-8 and are full of Russian text. An encoding
+# or line-ending round trip through a CP1251-aware tool is what corrupted them
+# once already, so the repository pins both properties explicitly.
+#
+# -text stops git from touching line endings. Every skill file is already LF and
+# must stay byte-identical to what DSH reads.
+# working-tree-encoding is deliberately NOT set: the files are plain UTF-8, and
+# asking git to transcode them would reintroduce the risk.
+* -text
+
+# Skill documents are UTF-8 with no BOM and LF endings.
+*.md -text
+*.yaml -text
+*.yml -text
+
+# Binary or generated content, never diffed.
+*.png binary
+*.jpg binary
+*.pdf binary

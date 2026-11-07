@@ -1,0 +1,11 @@
+# Editor and OS noise
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+.DS_Store
+
+# Local scratch that must never be published
+*.local.md
+scratch/
+tmp/
